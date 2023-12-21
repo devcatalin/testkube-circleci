@@ -4,6 +4,7 @@ jobs:
   run-tests:
     docker:
       - image: kubeshop/testkube-cli
+    working_directory: /home/testkube
     # environment:
     #   TESTKUBE_ORG_ID: ""
     #   TESTKUBE_ENV_ID: ""

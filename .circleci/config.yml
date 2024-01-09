@@ -5,10 +5,6 @@ jobs:
     docker:
       - image: catalinkubeshop/testkube-testing:1.0
     working_directory: /home/testkube
-    # environment:
-    #   TESTKUBE_ORG_ID: ""
-    #   TESTKUBE_ENV_ID: ""
-    #   TESTKUBE_API_KEY: ""
     steps:
       - run:
           name: "Set Testkube Context"

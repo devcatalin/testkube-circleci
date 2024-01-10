@@ -4,14 +4,14 @@ jobs:
   run-tests:
     docker:
       - image: catalinkubeshop/testkube-testing:latest
-    working_directory: /home/testkube
+    # working_directory: /home/testkube
     steps:
       - run:
           name: "Set Testkube Context"
-          command: "kubectl-testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID"
+          command: "testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"
       - run:
           name: "Trigger testkube test"
-          command: "kubectl-testkube run test curl-test1 -f"
+          command: "testkube run test curl-test1 -f"
 
 workflows:
   run-tests-workflow:

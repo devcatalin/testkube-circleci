@@ -12,11 +12,11 @@ RUN ln -s /bin/kubectl-testkube /bin/tk
 # Create and set permissions for /.testkube directory
 RUN mkdir /.testkube && echo "{}" > /.testkube/config.json && chmod -R 755 /.testkube
 
-# Create /home/testkube directory and set ownership
-# RUN mkdir -p /home/testkube && chown -R 1001:1001 /home/testkube
+# Create /project directory and set ownership
+RUN mkdir -p /project && chown -R 1001:1001 /project
 
 # Specify the user to use when running the image
-# USER 1001
+USER 1001
 
 # Set the entrypoint to the kubectl-testkube binary
 ENTRYPOINT ["/bin/kubectl-testkube"]

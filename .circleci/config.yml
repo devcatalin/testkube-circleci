@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: catalinkubeshop/testkube-testing:1.0
+      - image: catalinkubeshop/testkube-testing:latest
     working_directory: /home/testkube
     steps:
       - run:

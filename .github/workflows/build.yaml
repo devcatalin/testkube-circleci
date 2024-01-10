@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-and-push:
-    environment: Test
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo

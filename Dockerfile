@@ -13,7 +13,7 @@ RUN ln -s /bin/kubectl-testkube /bin/tk
 RUN mkdir /.testkube && echo "{}" > /.testkube/config.json && chmod -R 755 /.testkube && chown -R 1001:1001 /.testkube && chmod 660 /.testkube/config.json
 
 # # Create /project directory and set ownership
-# RUN mkdir -p /project && chown -R 1001:1001 /project
+RUN mkdir -p /project && chown -R 1001:1001 /project
 
 # Specify the user to use when running the image
 USER 1001

@@ -11,7 +11,7 @@ jobs:
           command: "testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"
       - run:
           name: "Trigger testkube test"
-          command: "testkube run test curl-test1 -f"
+          command: "testkube run test curl-test3 -f"
 
 workflows:
   run-tests-workflow:

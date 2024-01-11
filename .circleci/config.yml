@@ -3,15 +3,15 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: kubeshop/testkube
+      - image: kubeshop/testkube-cli
     working_directory: /.testkube
     steps:
       - run:
           name: "Set Testkube Context"
-          command: "testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"
+          command: "kubectl-testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"
       - run:
           name: "Trigger testkube test"
-          command: "testkube run test curl-test3 -f"
+          command: "kubectl-testkube run test curl-test3 -f"
 
 workflows:
   run-tests-workflow:

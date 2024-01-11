@@ -7,6 +7,11 @@ jobs:
     # working_directory: /home/testkube
     steps:
       - run:
+          name: "Prepare /project directory"
+          command: |
+            mkdir -p /project
+            sudo chown -R 1001:1001 /project
+      - run:
           name: "Set Testkube Context"
           command: "testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"
       - run:

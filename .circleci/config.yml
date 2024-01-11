@@ -4,11 +4,8 @@ jobs:
   run-tests:
     docker:
       - image: catalinkubeshop/testkube-testing:latest
-    # working_directory: /home/testkube
+    working_directory: /.testkube
     steps:
-      - run:
-          name: "Prepare /project directory"
-          command: mkdir -p /project
       - run:
           name: "Set Testkube Context"
           command: "testkube set context --api-key $TESTKUBE_API_KEY --org $TESTKUBE_ORG_ID --env $TESTKUBE_ENV_ID --cloud-root-domain testkube.dev"

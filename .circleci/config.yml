@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: catalinkubeshop/testkube-testing:latest
+      - image: kubeshop/testkube
     working_directory: /.testkube
     steps:
       - run:
